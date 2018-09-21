@@ -1,3 +1,4 @@
 ## Files/Directories to ignore
 mucommander/
 *.pdf
+*.mov
