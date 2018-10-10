@@ -1,5 +1,15 @@
 ## Files/Directories to ignore
+
+# Programs
 mucommander/
+jEdit/
+
+# Tar files
+jedit5.4.0source.tar.bz2
+
+# General File Types
 *.pdf
 *.mov
+
+# Projects
 git-time-lapse-view
