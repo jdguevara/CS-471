@@ -3,6 +3,7 @@
 [vfs.browser.path]
 /Users/jguevara
 [action]
-combined-options
 insert-newline-indent
+combined-options
 backspace
+global-options

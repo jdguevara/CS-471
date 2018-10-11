@@ -1034,6 +1034,10 @@ public class EditPane extends JPanel implements BufferSetListener
 		painter.setFractionalFontMetricsEnabled(jEdit.getBooleanProperty(
 			"view.fracFontMetrics"));
 
+		// Setting our notebook lines to be enabled - JG
+		painter.setNotebookLinesEnabled(jEdit.getBooleanProperty(
+				"view.notebookLines"));
+
 		painter.setSelectionFgColor(jEdit.getColorProperty(
 			"view.selectionFgColor"));
 		painter.setSelectionFgColorEnabled(jEdit.getBooleanProperty(

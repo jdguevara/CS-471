@@ -302,6 +302,8 @@ public class StandaloneTextArea extends TextArea
 			"view.selectionFgColor"));
 		painter.setSelectionFgColorEnabled(getBooleanProperty(
 			"view.selectionFg"));
+		painter.setNotebookLinesEnabled(getBooleanProperty(
+				"notebookLines"));
 		String defaultFont = getProperty("view.font");
 		int defaultFontSize = getIntegerProperty("view.fontsize",12);
 		painter.setStyles(SyntaxUtilities.loadStyles(defaultFont,defaultFontSize));

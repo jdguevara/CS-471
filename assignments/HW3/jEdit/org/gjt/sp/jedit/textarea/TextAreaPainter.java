@@ -532,6 +532,28 @@ public class TextAreaPainter extends JComponent implements TabExpander
 		eolMarkerChar = emc;
 	}
 
+	//{{{ isNotebookLinesEnabled() method
+	/**
+	 * Returns true if notebook lines should be drawn.
+	 * @author Jaime Guevara
+	 */
+	public final boolean isNotebookLinesEnabled()
+	{
+		return notebookLines;
+	} //}}}
+
+	//{{{ setNotebookLinesEnabled() method
+	/**
+	 * Sets if notebook lines should be drawn.
+	 * @param notebookLines
+	 *     True if the notebook lines should be drawn, false otherwise.
+	 * @author Jaime Guevara
+	 */
+	public final void setNotebookLinesEnabled(boolean notebookLines)
+	{
+		this.notebookLines = notebookLines;
+	} //}}}
+
 	//{{{ getEOLMarkerColor() method
 	/**
 	 * Returns the EOL marker color.
@@ -985,6 +1007,7 @@ public class TextAreaPainter extends JComponent implements TabExpander
 	boolean fracFontMetrics;
 	RenderingHints renderingHints;
 	boolean selectionFg;
+	boolean notebookLines; // Notebook lines check - JG
 	Color selectionFgColor;
 	// should try to use this as little as possible.
 	FontMetrics fm;
@@ -1147,17 +1170,21 @@ public class TextAreaPainter extends JComponent implements TabExpander
 			}
 			else {
 				bgColor = getBackground();
-				gfx.setColor(Color.blue);
-				gfx.drawLine(0, y, getWidth(), y);
+				if (notebookLines) {
+					gfx.setColor(Color.blue);
+					gfx.drawLine(0, y, getWidth(), y);
+				}
 			}
 
 			if(paintLineHighlight || collapsedFold)
 			{
 				gfx.setColor(bgColor);
 				gfx.fillRect(0,y,getWidth(),getLineHeight());
-				gfx.setColor(Color.blue);
-                gfx.drawLine(0, y, getWidth(), y);
-				gfx.drawLine(0, y+15, getWidth(), y+15);
+				if (notebookLines) {
+					gfx.setColor(Color.blue);
+					gfx.drawLine(0, y, getWidth(), y);
+					gfx.drawLine(0, y + 15, getWidth(), y + 15);
+				}
 			} //}}}
 
 			//{{{ Paint token backgrounds

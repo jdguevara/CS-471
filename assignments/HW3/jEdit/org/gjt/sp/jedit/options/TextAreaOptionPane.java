@@ -253,7 +253,7 @@ public class TextAreaOptionPane extends AbstractOptionPane
 		// Notebook checkbox - JG
 		notebookLines = new JCheckBox(jEdit.getProperty(
                 "options.textarea.notebookLines"));
-        notebookLines.setSelected(jEdit.getBooleanProperty("notebookLines"));
+        notebookLines.setSelected(jEdit.getBooleanProperty("view.notebookLines"));
         addComponent(notebookLines);
 	} //}}}
 
@@ -310,6 +310,7 @@ public class TextAreaOptionPane extends AbstractOptionPane
 		jEdit.setBooleanProperty("stripTrailingEOL", stripTrailingEOL.isSelected());
 		jEdit.setBooleanProperty("completeFromAllBuffers", completeFromAllBuffers.isSelected());
 		jEdit.setBooleanProperty("insertCompletionWithDigit", insertCompletionWithDigit.isSelected());
+		jEdit.setBooleanProperty("view.notebookLines", notebookLines.isSelected()); // Selection of notebook lines - JG
 		jEdit.setIntegerProperty("options.textarea.lineSpacing",
 					 Integer.valueOf(lineSpacing.getText()));
 	} //}}}
@@ -321,7 +322,6 @@ public class TextAreaOptionPane extends AbstractOptionPane
 	private JCheckBox fontSubstSystemFonts;
 	private ColorWellButton foregroundColor;
 	private ColorWellButton backgroundColor;
-	private JCheckBox notebookLines; // Checkbox for adding "notebook" lines - JG
 	private JCheckBox blinkCaret;
 	private JCheckBox blockCaret;
 	private JCheckBox thickCaret;
@@ -346,6 +346,7 @@ public class TextAreaOptionPane extends AbstractOptionPane
 	private JCheckBox stripTrailingEOL;
 	private JCheckBox completeFromAllBuffers;
 	private JCheckBox insertCompletionWithDigit;
+	private JCheckBox notebookLines; // Checkbox for adding "notebook" lines - JG
 	private JTextField lineSpacing;
 	//}}}
 

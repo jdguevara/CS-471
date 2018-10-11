@@ -438,6 +438,7 @@ script.append( "if(match != -1) {"                            );
 script.append(   "if(__char__ != '\\n') ++match;"             );
 script.append(   "textArea.select(start, start + match - 1);" );
 script.append( "}"                                            );
+script.append( "notebookLines = textArea.getNotebookLines();" );
 
 view.getInputHandler().readNextChar("Enter a character",
     script.toString());

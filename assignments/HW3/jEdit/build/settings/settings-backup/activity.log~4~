@@ -1,127 +1,177 @@
-Log file created on Thu Oct 11 11:53:16 MDT 2018
+Log file created on Thu Oct 11 15:56:17 MDT 2018
 IMPORTANT:
 Because updating this file after every log message would kill
 performance, it will be *incomplete* unless you invoke the
 Utilities->Troubleshooting->Update Activity Log on Disk command!
-11:53:12 AM [main] [message] Log: When reporting bugs, please include the following information:
-11:53:12 AM [main] [message] Log: java.version=1.8.0_161
-11:53:12 AM [main] [message] Log: java.vm.version=25.161-b12
-11:53:12 AM [main] [message] Log: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
-11:53:12 AM [main] [message] Log: java.runtime.version=1.8.0_161-b12
-11:53:12 AM [main] [message] Log: java.runtime.name=Java(TM) SE Runtime Environment
-11:53:12 AM [main] [message] Log: java.vendor=Oracle Corporation
-11:53:12 AM [main] [message] Log: java.compiler=null
-11:53:12 AM [main] [message] Log: os.name=Mac OS X
-11:53:12 AM [main] [message] Log: os.version=10.13.6
-11:53:12 AM [main] [message] Log: os.arch=x86_64
-11:53:12 AM [main] [message] Log: user.home=/Users/jguevara
-11:53:12 AM [main] [message] Log: java.home=/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre
-11:53:12 AM [main] [message] Log: java.class.path=/Users/jguevara/CS-471/assignments/HW3/jEdit/build/jedit.jar
-11:53:12 AM [main] [message] jEdit: starting with command line arguments: -settings=/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings
-11:53:12 AM [main] [debug] jEdit: before splash screen activation:48 ms
-11:53:16 AM [main] [debug] jEdit: after splash screen activation:3956 ms
-11:53:16 AM [main] [debug] MiscUtilities: Saving backup of file "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/activity.log" to "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/settings-backup/activity.log~1~"
-11:53:16 AM [main] [notice] jEdit: jEdit version 5.4.0
-11:53:16 AM [main] [message] jEdit: Settings directory is /Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings
-11:53:16 AM [main] [message] jEdit: jEdit home directory is /Users/jguevara/CS-471/assignments/HW3/jEdit/build
-11:53:16 AM [main] [debug] SplashScreen: init:22/3662ms
-11:53:16 AM [main] [debug] SplashScreen: init system properties:27/3689ms
-11:53:16 AM [main] [message] BeanShell: Beanshell Init
-11:53:16 AM [main] [debug] SplashScreen: init beanshell:45/3734ms
-11:53:16 AM [main] [debug] SplashScreen: loading site properties:2/3736ms
-11:53:16 AM [main] [debug] SplashScreen: loading user properties:3/3739ms
-11:53:16 AM [main] [debug] GUIUtilities: Icon theme set to: tango
-11:53:16 AM [main] [debug] GUIUtilities: Loading icon theme from: jeditresource:/org/gjt/sp/jedit/icons/themes/tango/
-11:53:16 AM [main] [debug] SplashScreen: init GUI:5/3744ms
-11:53:16 AM [main] [debug] EditServer: jEdit server started on port 59554
-11:53:16 AM [main] [debug] EditServer: Authorization key is 1994406343
-11:53:16 AM [main] [debug] SplashScreen: init server:36/3780ms
-11:53:16 AM [main] [debug] jEdit: initPLAF non-edt old=com.apple.laf.AquaLookAndFeel requested=null new=com.apple.laf.AquaLookAndFeel
-11:53:16 AM [main] [debug] SplashScreen: init look and feel:5/3785ms
-11:53:16 AM [main] [debug] SplashScreen: init VFS Manager:2/3787ms
-11:53:16 AM [main] [debug] ActionSet: Loading actions from jar:file:/Users/jguevara/CS-471/assignments/HW3/jEdit/build/jedit.jar!/org/gjt/sp/jedit/actions.xml
-11:53:16 AM [main] [debug] DockableWindowManager: Loading dockables from jar:file:/Users/jguevara/CS-471/assignments/HW3/jEdit/build/jedit.jar!/org/gjt/sp/jedit/dockables.xml
-11:53:16 AM [main] [debug] SplashScreen: init resources:82/3869ms
-11:53:16 AM [AWT-EventQueue-0] [debug] EditBus: SearchSettingsChanged[source=null]
-11:53:16 AM [main] [debug] SplashScreen: Migrate keymaps:43/3912ms
-11:53:16 AM [main] [notice] jEdit: Loading plugins from /Users/jguevara/CS-471/assignments/HW3/jEdit/build/jars
-11:53:16 AM [AWT-EventQueue-0] [debug] EditBus: PluginUpdate[what=LOADED,exit=false,version=1.3,source=/Users/jguevara/CS-471/assignments/HW3/jEdit/build/jars/MacOSX.jar,class=macosx.MacOSXPlugin]
-11:53:16 AM [AWT-EventQueue-0] [debug] EditBus: PluginUpdate[what=LOADED,exit=false,version=5.0,source=/Users/jguevara/CS-471/assignments/HW3/jEdit/build/jars/QuickNotepad.jar,class=QuickNotepadPlugin]
-11:53:16 AM [main] [notice] jEdit: Loading plugins from /Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/jars
-11:53:16 AM [main] [debug] SplashScreen: init plugins:18/3930ms
-11:53:16 AM [main] [message] HistoryModel: Loading history
-11:53:16 AM [main] [debug] SplashScreen: init history model:4/3934ms
-11:53:16 AM [main] [message] BufferHistory: Loading /Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/recent.xml
-11:53:16 AM [main] [debug] SplashScreen: init buffer history:6/3940ms
-11:53:16 AM [main] [message] KillRing: Loading /Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/killring.xml
-11:53:16 AM [main] [debug] SplashScreen: init killring:11/3951ms
-11:53:16 AM [main] [debug] jEdit: initPLAF non-edt old=com.apple.laf.AquaLookAndFeel requested=null new=com.apple.laf.AquaLookAndFeel
-11:53:16 AM [main] [debug] jEdit: SOCKS proxy disabled
-11:53:16 AM [main] [debug] jEdit: HTTP proxy disabled
-11:53:16 AM [AWT-EventQueue-0] [debug] EditBus: PropertiesChanged[source=null]
-11:53:16 AM [main] [debug] SplashScreen: init various properties:76/4027ms
-11:53:16 AM [main] [message] jEdit: Loading mode catalog file /Users/jguevara/CS-471/assignments/HW3/jEdit/build/modes/catalog
-11:53:16 AM [main] [message] jEdit: Loading mode catalog file /Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/modes/catalog
-11:53:16 AM [main] [debug] SplashScreen: init modes:54/4081ms
-11:53:16 AM [main] [debug] PluginJAR: Activating macosx.MacOSXPlugin because of startup
-11:53:16 AM [main] [debug] PluginJAR: Opening /Users/jguevara/CS-471/assignments/HW3/jEdit/build/jars/MacOSX.jar
-11:53:17 AM [main] [debug] SplashScreen: activate plugins:13/4094ms
-11:53:17 AM [AWT-EventQueue-0] [debug] EditBus: PluginUpdate[what=ACTIVATED,exit=false,version=1.3,source=/Users/jguevara/CS-471/assignments/HW3/jEdit/build/jars/MacOSX.jar,class=macosx.MacOSXPlugin]
-11:53:17 AM [main] [debug] Macros: Registered beanshell macro handler
-11:53:17 AM [AWT-EventQueue-0] [debug] EditBus: DynamicMenuChanged[menu=macros,source=null]
-11:53:17 AM [main] [message] BeanShell: Running script /Users/jguevara/CS-471/assignments/HW3/jEdit/build/startup/startup.bsh
-11:53:17 AM [main] [notice] jEdit$5: Loading edit mode /Users/jguevara/CS-471/assignments/HW3/jEdit/build/modes/text.xml
-11:53:17 AM [main] [debug] String: BeanShell interpreter version 2.0b4-jedit
-11:53:17 AM [main] [debug] SplashScreen: init macros:153/4247ms
-11:53:17 AM [main] [debug] SplashScreen: run startup scripts:1/4248ms
-11:53:17 AM [main] [debug] SplashScreen: run startup scripts:2/4249ms
-11:53:17 AM [main] [debug] jEdit: main done:4602 ms
-11:53:17 AM [AWT-EventQueue-0] [message] PerspectiveManager: Loading /Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/perspective.xml
-11:53:17 AM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=PROPERTIES_CHANGED,view=null,source=Untitled-1 (~/)]
-11:53:17 AM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=CREATED,view=null,source=Untitled-1 (~/)]
-11:53:17 AM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=LOAD_STARTED,view=null,source=Untitled-1 (~/)]
-11:53:17 AM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=LOADED,view=null,source=Untitled-1 (~/)]
-11:53:17 AM [AWT-EventQueue-0] [debug] BufferSet: 560263358: addBufferSetListener org.gjt.sp.jedit.EditPane[inactive]
-11:53:17 AM [AWT-EventQueue-0] [debug] EditBus: BufferChanging[what=BUFFER_CHANGING,source=org.gjt.sp.jedit.EditPane[inactive]]
-11:53:17 AM [AWT-EventQueue-0] [debug] BufferSet: 560263358 addBufferAt(Untitled-1 (~/),-1)
-11:53:17 AM [AWT-EventQueue-0] [debug] BufferSet: 560263358: Buffer added Untitled-1 (~/) at 0
-11:53:17 AM [AWT-EventQueue-0] [debug] EditBus: EditPaneUpdate[what=CREATED,source=org.gjt.sp.jedit.EditPane[inactive]]
-11:53:17 AM [AWT-EventQueue-0] [debug] BufferSet: 560263358 addBufferAt(Untitled-1 (~/),0)
-11:53:17 AM [AWT-EventQueue-0] [debug] EditBus: ViewUpdate[what=CREATED,source=org.gjt.sp.jedit.View[active]]
-11:53:17 AM [AWT-EventQueue-0] [debug] EditBus: EditorStarted[source=null]
-11:53:17 AM [AWT-EventQueue-0] [message] jEdit: Startup complete: 5187 ms
-11:53:17 AM [AWT-EventQueue-0] [debug] EditBus: ViewUpdate[what=VIEW_ACTIVATED,source=org.gjt.sp.jedit.View[active]]
-11:53:17 AM [AWT-EventQueue-0] [debug] jEdit: checkBufferStatus for all buffers
-11:53:17 AM [AWT-EventQueue-0] [debug] JEditTextArea: InputMethodSupport is activated
-11:53:19 AM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
-11:53:19 AM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=DIRTY_CHANGED,view=null,source=Untitled-1 (~/)]
-11:53:20 AM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
-11:53:20 AM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
-11:53:21 AM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
-11:53:25 AM [AWT-EventQueue-0] [debug] EditBus: EditorExitRequested[source=org.gjt.sp.jedit.View[active]]
-11:53:25 AM [AWT-EventQueue-0] [message] PerspectiveManager: Saving /Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/perspective.xml
-11:53:25 AM [AWT-EventQueue-0] [debug] MiscUtilities: Saving backup of file "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/perspective.xml" to "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/settings-backup/perspective.xml~1~"
-11:53:26 AM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=CLOSING,view=org.gjt.sp.jedit.View[active],source=Untitled-1 (~/)]
-11:53:26 AM [AWT-EventQueue-0] [debug] BufferSet: 560263358: Buffer removed Untitled-1 (~/)
-11:53:26 AM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=PROPERTIES_CHANGED,view=null,source=Untitled-1 (~/)]
-11:53:26 AM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=CREATED,view=null,source=Untitled-1 (~/)]
-11:53:26 AM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=LOAD_STARTED,view=null,source=Untitled-1 (~/)]
-11:53:26 AM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=LOADED,view=null,source=Untitled-1 (~/)]
-11:53:26 AM [AWT-EventQueue-0] [debug] BufferSet: 560263358 addBufferAt(Untitled-1 (~/),-1)
-11:53:26 AM [AWT-EventQueue-0] [debug] BufferSet: 560263358: Buffer added Untitled-1 (~/) at 0
-11:53:26 AM [AWT-EventQueue-0] [debug] EditBus: BufferChanging[what=BUFFER_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
-11:53:26 AM [AWT-EventQueue-0] [debug] EditBus: EditPaneUpdate[what=BUFFER_CHANGED,source=org.gjt.sp.jedit.EditPane[active]]
-11:53:26 AM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=CLOSED,view=org.gjt.sp.jedit.View[active],source=Untitled-1 (~/)]
-11:53:26 AM [AWT-EventQueue-0] [debug] EditBus: EditorExiting[source=null]
-11:53:26 AM [AWT-EventQueue-0] [debug] EditBus: ViewUpdate[what=CLOSED,source=org.gjt.sp.jedit.View[active]]
-11:53:26 AM [AWT-EventQueue-0] [debug] EditBus: EditPaneUpdate[what=DESTROYED,source=org.gjt.sp.jedit.EditPane[active]]
-11:53:26 AM [AWT-EventQueue-0] [debug] BufferSet: 560263358: Buffer removed Untitled-1 (~/)
-11:53:26 AM [AWT-EventQueue-0] [debug] BufferSetManager: Buffer:Untitled-1 (~/) is in no bufferSet anymore, closing it
-11:53:26 AM [AWT-EventQueue-0] [debug] EditBus: PluginUpdate[what=DEACTIVATED,exit=true,version=1.3,source=/Users/jguevara/CS-471/assignments/HW3/jEdit/build/jars/MacOSX.jar,class=macosx.MacOSXPlugin]
-11:53:26 AM [AWT-EventQueue-0] [debug] EditBus: PluginUpdate[what=UNLOADED,exit=true,version=1.3,source=/Users/jguevara/CS-471/assignments/HW3/jEdit/build/jars/MacOSX.jar,class=macosx.MacOSXPlugin]
-11:53:26 AM [AWT-EventQueue-0] [debug] EditBus: PluginUpdate[what=UNLOADED,exit=true,version=5.0,source=/Users/jguevara/CS-471/assignments/HW3/jEdit/build/jars/QuickNotepad.jar,class=QuickNotepadPlugin]
-11:53:26 AM [AWT-EventQueue-0] [message] BufferHistory: Saving /Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/recent.xml
-11:53:26 AM [AWT-EventQueue-0] [debug] MiscUtilities: Saving backup of file "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/recent.xml" to "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/settings-backup/recent.xml~1~"
-11:53:26 AM [AWT-EventQueue-0] [message] KillRing: Saving /Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/killring.xml
-11:53:26 AM [AWT-EventQueue-0] [debug] MiscUtilities: Saving backup of file "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/killring.xml" to "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/settings-backup/killring.xml~1~"
-11:53:26 AM [AWT-EventQueue-0] [debug] MiscUtilities: Saving backup of file "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/properties" to "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/settings-backup/properties~1~"
+3:56:14 PM [main] [message] Log: When reporting bugs, please include the following information:
+3:56:14 PM [main] [message] Log: java.version=1.8.0_161
+3:56:14 PM [main] [message] Log: java.vm.version=25.161-b12
+3:56:14 PM [main] [message] Log: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+3:56:14 PM [main] [message] Log: java.runtime.version=1.8.0_161-b12
+3:56:14 PM [main] [message] Log: java.runtime.name=Java(TM) SE Runtime Environment
+3:56:14 PM [main] [message] Log: java.vendor=Oracle Corporation
+3:56:14 PM [main] [message] Log: java.compiler=null
+3:56:14 PM [main] [message] Log: os.name=Mac OS X
+3:56:14 PM [main] [message] Log: os.version=10.13.6
+3:56:14 PM [main] [message] Log: os.arch=x86_64
+3:56:14 PM [main] [message] Log: user.home=/Users/jguevara
+3:56:14 PM [main] [message] Log: java.home=/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre
+3:56:14 PM [main] [message] Log: java.class.path=/Users/jguevara/CS-471/assignments/HW3/jEdit/build/jedit.jar
+3:56:14 PM [main] [message] jEdit: starting with command line arguments: -settings=/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings
+3:56:14 PM [main] [debug] jEdit: before splash screen activation:46 ms
+3:56:17 PM [main] [debug] jEdit: after splash screen activation:3190 ms
+3:56:17 PM [main] [debug] MiscUtilities: Saving backup of file "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/activity.log" to "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/settings-backup/activity.log~1~"
+3:56:17 PM [main] [notice] jEdit: jEdit version 5.4.0
+3:56:17 PM [main] [message] jEdit: Settings directory is /Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings
+3:56:17 PM [main] [message] jEdit: jEdit home directory is /Users/jguevara/CS-471/assignments/HW3/jEdit/build
+3:56:17 PM [main] [debug] SplashScreen: init:38/2889ms
+3:56:18 PM [main] [debug] SplashScreen: init system properties:22/2911ms
+3:56:18 PM [main] [message] BeanShell: Beanshell Init
+3:56:18 PM [main] [debug] SplashScreen: init beanshell:45/2956ms
+3:56:18 PM [main] [debug] SplashScreen: loading site properties:2/2958ms
+3:56:18 PM [main] [debug] SplashScreen: loading user properties:3/2961ms
+3:56:18 PM [main] [debug] GUIUtilities: Icon theme set to: tango
+3:56:18 PM [main] [debug] GUIUtilities: Loading icon theme from: jeditresource:/org/gjt/sp/jedit/icons/themes/tango/
+3:56:18 PM [main] [debug] SplashScreen: init GUI:4/2965ms
+3:56:18 PM [main] [debug] EditServer: jEdit server started on port 59988
+3:56:18 PM [main] [debug] EditServer: Authorization key is 131770143
+3:56:18 PM [main] [debug] SplashScreen: init server:36/3001ms
+3:56:18 PM [main] [debug] jEdit: initPLAF non-edt old=com.apple.laf.AquaLookAndFeel requested=null new=com.apple.laf.AquaLookAndFeel
+3:56:18 PM [main] [debug] SplashScreen: init look and feel:5/3006ms
+3:56:18 PM [main] [debug] SplashScreen: init VFS Manager:2/3008ms
+3:56:18 PM [main] [debug] ActionSet: Loading actions from jar:file:/Users/jguevara/CS-471/assignments/HW3/jEdit/build/jedit.jar!/org/gjt/sp/jedit/actions.xml
+3:56:18 PM [main] [debug] DockableWindowManager: Loading dockables from jar:file:/Users/jguevara/CS-471/assignments/HW3/jEdit/build/jedit.jar!/org/gjt/sp/jedit/dockables.xml
+3:56:18 PM [main] [debug] SplashScreen: init resources:81/3089ms
+3:56:18 PM [AWT-EventQueue-0] [debug] EditBus: SearchSettingsChanged[source=null]
+3:56:18 PM [main] [debug] SplashScreen: Migrate keymaps:40/3129ms
+3:56:18 PM [main] [notice] jEdit: Loading plugins from /Users/jguevara/CS-471/assignments/HW3/jEdit/build/jars
+3:56:18 PM [AWT-EventQueue-0] [debug] EditBus: PluginUpdate[what=LOADED,exit=false,version=1.3,source=/Users/jguevara/CS-471/assignments/HW3/jEdit/build/jars/MacOSX.jar,class=macosx.MacOSXPlugin]
+3:56:18 PM [AWT-EventQueue-0] [debug] EditBus: PluginUpdate[what=LOADED,exit=false,version=5.0,source=/Users/jguevara/CS-471/assignments/HW3/jEdit/build/jars/QuickNotepad.jar,class=QuickNotepadPlugin]
+3:56:18 PM [main] [notice] jEdit: Loading plugins from /Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/jars
+3:56:18 PM [main] [debug] SplashScreen: init plugins:13/3142ms
+3:56:18 PM [main] [message] HistoryModel: Loading history
+3:56:18 PM [main] [debug] SplashScreen: init history model:4/3146ms
+3:56:18 PM [main] [message] BufferHistory: Loading /Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/recent.xml
+3:56:18 PM [main] [debug] SplashScreen: init buffer history:6/3152ms
+3:56:18 PM [main] [message] KillRing: Loading /Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/killring.xml
+3:56:18 PM [main] [debug] SplashScreen: init killring:9/3161ms
+3:56:18 PM [main] [debug] jEdit: initPLAF non-edt old=com.apple.laf.AquaLookAndFeel requested=null new=com.apple.laf.AquaLookAndFeel
+3:56:18 PM [main] [debug] jEdit: SOCKS proxy disabled
+3:56:18 PM [main] [debug] jEdit: HTTP proxy disabled
+3:56:18 PM [AWT-EventQueue-0] [debug] EditBus: PropertiesChanged[source=null]
+3:56:18 PM [main] [debug] SplashScreen: init various properties:92/3253ms
+3:56:18 PM [main] [message] jEdit: Loading mode catalog file /Users/jguevara/CS-471/assignments/HW3/jEdit/build/modes/catalog
+3:56:18 PM [main] [message] jEdit: Loading mode catalog file /Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/modes/catalog
+3:56:18 PM [main] [debug] SplashScreen: init modes:58/3311ms
+3:56:18 PM [main] [debug] PluginJAR: Activating macosx.MacOSXPlugin because of startup
+3:56:18 PM [main] [debug] PluginJAR: Opening /Users/jguevara/CS-471/assignments/HW3/jEdit/build/jars/MacOSX.jar
+3:56:18 PM [main] [debug] SplashScreen: activate plugins:11/3322ms
+3:56:18 PM [AWT-EventQueue-0] [debug] EditBus: PluginUpdate[what=ACTIVATED,exit=false,version=1.3,source=/Users/jguevara/CS-471/assignments/HW3/jEdit/build/jars/MacOSX.jar,class=macosx.MacOSXPlugin]
+3:56:18 PM [main] [debug] Macros: Registered beanshell macro handler
+3:56:18 PM [AWT-EventQueue-0] [debug] EditBus: DynamicMenuChanged[menu=macros,source=null]
+3:56:18 PM [main] [message] BeanShell: Running script /Users/jguevara/CS-471/assignments/HW3/jEdit/build/startup/startup.bsh
+3:56:18 PM [main] [notice] jEdit$5: Loading edit mode /Users/jguevara/CS-471/assignments/HW3/jEdit/build/modes/text.xml
+3:56:18 PM [main] [debug] String: BeanShell interpreter version 2.0b4-jedit
+3:56:18 PM [main] [debug] SplashScreen: init macros:146/3468ms
+3:56:18 PM [main] [debug] SplashScreen: run startup scripts:1/3469ms
+3:56:18 PM [main] [debug] SplashScreen: run startup scripts:2/3470ms
+3:56:18 PM [main] [debug] jEdit: main done:3828 ms
+3:56:18 PM [AWT-EventQueue-0] [message] PerspectiveManager: Loading /Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/perspective.xml
+3:56:18 PM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=PROPERTIES_CHANGED,view=null,source=Untitled-1 (~/)]
+3:56:18 PM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=CREATED,view=null,source=Untitled-1 (~/)]
+3:56:18 PM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=LOAD_STARTED,view=null,source=Untitled-1 (~/)]
+3:56:18 PM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=LOADED,view=null,source=Untitled-1 (~/)]
+3:56:18 PM [AWT-EventQueue-0] [debug] BufferSet: 799528549: addBufferSetListener org.gjt.sp.jedit.EditPane[inactive]
+3:56:18 PM [AWT-EventQueue-0] [debug] EditBus: BufferChanging[what=BUFFER_CHANGING,source=org.gjt.sp.jedit.EditPane[inactive]]
+3:56:18 PM [AWT-EventQueue-0] [debug] BufferSet: 799528549 addBufferAt(Untitled-1 (~/),-1)
+3:56:18 PM [AWT-EventQueue-0] [debug] BufferSet: 799528549: Buffer added Untitled-1 (~/) at 0
+3:56:18 PM [AWT-EventQueue-0] [debug] EditBus: EditPaneUpdate[what=CREATED,source=org.gjt.sp.jedit.EditPane[inactive]]
+3:56:18 PM [AWT-EventQueue-0] [debug] BufferSet: 799528549 addBufferAt(Untitled-1 (~/),0)
+3:56:19 PM [AWT-EventQueue-0] [debug] EditBus: ViewUpdate[what=CREATED,source=org.gjt.sp.jedit.View[active]]
+3:56:19 PM [AWT-EventQueue-0] [debug] EditBus: EditorStarted[source=null]
+3:56:19 PM [AWT-EventQueue-0] [message] jEdit: Startup complete: 4441 ms
+3:56:19 PM [AWT-EventQueue-0] [debug] EditBus: ViewUpdate[what=VIEW_ACTIVATED,source=org.gjt.sp.jedit.View[active]]
+3:56:19 PM [AWT-EventQueue-0] [debug] jEdit: checkBufferStatus for all buffers
+3:56:19 PM [AWT-EventQueue-0] [debug] JEditTextArea: InputMethodSupport is activated
+3:56:20 PM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:20 PM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=DIRTY_CHANGED,view=null,source=Untitled-1 (~/)]
+3:56:21 PM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:21 PM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:21 PM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:21 PM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:21 PM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:22 PM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:22 PM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:22 PM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:28 PM [AWT-EventQueue-0] [debug] jEdit: initPLAF edt old=com.apple.laf.AquaLookAndFeel requested=null new=com.apple.laf.AquaLookAndFeel
+3:56:28 PM [AWT-EventQueue-0] [debug] jEdit: SOCKS proxy disabled
+3:56:28 PM [AWT-EventQueue-0] [debug] jEdit: HTTP proxy disabled
+3:56:28 PM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=PROPERTIES_CHANGED,view=null,source=Untitled-1 (~/)]
+3:56:28 PM [AWT-EventQueue-0] [debug] EditBus: PropertiesChanged[source=null]
+3:56:28 PM [AWT-EventQueue-0] [message] HistoryModel: Saving history
+3:56:28 PM [AWT-EventQueue-0] [debug] MiscUtilities: Saving backup of file "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/history" to "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/settings-backup/history~1~"
+3:56:28 PM [AWT-EventQueue-0] [message] BufferHistory: Saving /Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/recent.xml
+3:56:28 PM [AWT-EventQueue-0] [debug] MiscUtilities: Saving backup of file "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/recent.xml" to "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/settings-backup/recent.xml~1~"
+3:56:28 PM [AWT-EventQueue-0] [message] KillRing: Saving /Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/killring.xml
+3:56:28 PM [AWT-EventQueue-0] [debug] MiscUtilities: Saving backup of file "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/killring.xml" to "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/settings-backup/killring.xml~1~"
+3:56:28 PM [AWT-EventQueue-0] [debug] MiscUtilities: Saving backup of file "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/properties" to "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/settings-backup/properties~1~"
+3:56:28 PM [AWT-EventQueue-0] [debug] EditBus: ViewUpdate[what=VIEW_ACTIVATED,source=org.gjt.sp.jedit.View[active]]
+3:56:28 PM [AWT-EventQueue-0] [debug] jEdit: checkBufferStatus for all buffers
+3:56:29 PM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:30 PM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:31 PM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:31 PM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:31 PM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:31 PM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:31 PM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:31 PM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:32 PM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:36 PM [AWT-EventQueue-0] [debug] jEdit: initPLAF edt old=com.apple.laf.AquaLookAndFeel requested=null new=com.apple.laf.AquaLookAndFeel
+3:56:36 PM [AWT-EventQueue-0] [debug] jEdit: SOCKS proxy disabled
+3:56:36 PM [AWT-EventQueue-0] [debug] jEdit: HTTP proxy disabled
+3:56:36 PM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=PROPERTIES_CHANGED,view=null,source=Untitled-1 (~/)]
+3:56:36 PM [AWT-EventQueue-0] [debug] EditBus: PropertiesChanged[source=null]
+3:56:36 PM [AWT-EventQueue-0] [message] HistoryModel: Saving history
+3:56:36 PM [AWT-EventQueue-0] [debug] MiscUtilities: Saving backup of file "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/history" to "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/settings-backup/history~1~"
+3:56:36 PM [AWT-EventQueue-0] [message] BufferHistory: Saving /Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/recent.xml
+3:56:36 PM [AWT-EventQueue-0] [debug] MiscUtilities: Saving backup of file "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/recent.xml" to "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/settings-backup/recent.xml~1~"
+3:56:36 PM [AWT-EventQueue-0] [message] KillRing: Saving /Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/killring.xml
+3:56:36 PM [AWT-EventQueue-0] [debug] MiscUtilities: Saving backup of file "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/killring.xml" to "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/settings-backup/killring.xml~1~"
+3:56:36 PM [AWT-EventQueue-0] [debug] MiscUtilities: Saving backup of file "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/properties" to "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/settings-backup/properties~1~"
+3:56:42 PM [AWT-EventQueue-0] [debug] EditBus: ViewUpdate[what=VIEW_ACTIVATED,source=org.gjt.sp.jedit.View[active]]
+3:56:42 PM [AWT-EventQueue-0] [debug] jEdit: checkBufferStatus for all buffers
+3:56:44 PM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:44 PM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:44 PM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:44 PM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:44 PM [AWT-EventQueue-0] [debug] EditBus: PositionChanging[what=POSITION_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:48 PM [AWT-EventQueue-0] [debug] MiscUtilities: Saving backup of file "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/perspective.xml" to "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/settings-backup/perspective.xml~1~"
+3:56:48 PM [AWT-EventQueue-0] [debug] EditBus: EditorExitRequested[source=org.gjt.sp.jedit.View[active]]
+3:56:48 PM [AWT-EventQueue-0] [message] PerspectiveManager: Saving /Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/perspective.xml
+3:56:48 PM [AWT-EventQueue-0] [debug] MiscUtilities: Saving backup of file "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/perspective.xml" to "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/settings-backup/perspective.xml~1~"
+3:56:49 PM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=CLOSING,view=org.gjt.sp.jedit.View[active],source=Untitled-1 (~/)]
+3:56:49 PM [AWT-EventQueue-0] [debug] BufferSet: 799528549: Buffer removed Untitled-1 (~/)
+3:56:49 PM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=PROPERTIES_CHANGED,view=null,source=Untitled-1 (~/)]
+3:56:49 PM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=CREATED,view=null,source=Untitled-1 (~/)]
+3:56:49 PM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=LOAD_STARTED,view=null,source=Untitled-1 (~/)]
+3:56:49 PM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=LOADED,view=null,source=Untitled-1 (~/)]
+3:56:49 PM [AWT-EventQueue-0] [debug] BufferSet: 799528549 addBufferAt(Untitled-1 (~/),-1)
+3:56:49 PM [AWT-EventQueue-0] [debug] BufferSet: 799528549: Buffer added Untitled-1 (~/) at 0
+3:56:49 PM [AWT-EventQueue-0] [debug] EditBus: BufferChanging[what=BUFFER_CHANGING,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:49 PM [AWT-EventQueue-0] [debug] EditBus: EditPaneUpdate[what=BUFFER_CHANGED,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:49 PM [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=CLOSED,view=org.gjt.sp.jedit.View[active],source=Untitled-1 (~/)]
+3:56:49 PM [AWT-EventQueue-0] [debug] EditBus: EditorExiting[source=null]
+3:56:49 PM [AWT-EventQueue-0] [debug] EditBus: ViewUpdate[what=CLOSED,source=org.gjt.sp.jedit.View[active]]
+3:56:49 PM [AWT-EventQueue-0] [debug] EditBus: EditPaneUpdate[what=DESTROYED,source=org.gjt.sp.jedit.EditPane[active]]
+3:56:49 PM [AWT-EventQueue-0] [debug] BufferSet: 799528549: Buffer removed Untitled-1 (~/)
+3:56:49 PM [AWT-EventQueue-0] [debug] BufferSetManager: Buffer:Untitled-1 (~/) is in no bufferSet anymore, closing it
+3:56:49 PM [AWT-EventQueue-0] [debug] EditBus: PluginUpdate[what=DEACTIVATED,exit=true,version=1.3,source=/Users/jguevara/CS-471/assignments/HW3/jEdit/build/jars/MacOSX.jar,class=macosx.MacOSXPlugin]
+3:56:49 PM [AWT-EventQueue-0] [debug] EditBus: PluginUpdate[what=UNLOADED,exit=true,version=1.3,source=/Users/jguevara/CS-471/assignments/HW3/jEdit/build/jars/MacOSX.jar,class=macosx.MacOSXPlugin]
+3:56:49 PM [AWT-EventQueue-0] [debug] EditBus: PluginUpdate[what=UNLOADED,exit=true,version=5.0,source=/Users/jguevara/CS-471/assignments/HW3/jEdit/build/jars/QuickNotepad.jar,class=QuickNotepadPlugin]
+3:56:49 PM [AWT-EventQueue-0] [message] HistoryModel: Saving history
+3:56:49 PM [AWT-EventQueue-0] [debug] MiscUtilities: Saving backup of file "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/history" to "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/settings-backup/history~1~"
+3:56:49 PM [AWT-EventQueue-0] [message] BufferHistory: Saving /Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/recent.xml
+3:56:49 PM [AWT-EventQueue-0] [debug] MiscUtilities: Saving backup of file "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/recent.xml" to "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/settings-backup/recent.xml~1~"
+3:56:49 PM [AWT-EventQueue-0] [message] KillRing: Saving /Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/killring.xml
+3:56:49 PM [AWT-EventQueue-0] [debug] MiscUtilities: Saving backup of file "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/killring.xml" to "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/settings-backup/killring.xml~1~"
+3:56:49 PM [AWT-EventQueue-0] [debug] MiscUtilities: Saving backup of file "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/properties" to "/Users/jguevara/CS-471/assignments/HW3/jEdit/build/settings/settings-backup/properties~1~"
