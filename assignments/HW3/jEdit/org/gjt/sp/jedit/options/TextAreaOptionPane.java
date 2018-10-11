@@ -249,6 +249,12 @@ public class TextAreaOptionPane extends AbstractOptionPane
 			"options.textarea.insertCompletionWithDigit"));
 		insertCompletionWithDigit.setSelected(jEdit.getBooleanProperty("insertCompletionWithDigit"));
 		addComponent(insertCompletionWithDigit);
+
+		// Notebook checkbox - JG
+		notebookLines = new JCheckBox(jEdit.getProperty(
+                "options.textarea.notebookLines"));
+        notebookLines.setSelected(jEdit.getBooleanProperty("notebookLines"));
+        addComponent(notebookLines);
 	} //}}}
 
 	//{{{ _save() method
@@ -315,6 +321,7 @@ public class TextAreaOptionPane extends AbstractOptionPane
 	private JCheckBox fontSubstSystemFonts;
 	private ColorWellButton foregroundColor;
 	private ColorWellButton backgroundColor;
+	private JCheckBox notebookLines; // Checkbox for adding "notebook" lines - JG
 	private JCheckBox blinkCaret;
 	private JCheckBox blockCaret;
 	private JCheckBox thickCaret;

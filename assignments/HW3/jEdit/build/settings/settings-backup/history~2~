@@ -1,0 +1,8 @@
+[vfs.browser.filter]
+*\[^~#\]
+[vfs.browser.path]
+/Users/jguevara
+[action]
+insert-newline-indent
+combined-options
+backspace

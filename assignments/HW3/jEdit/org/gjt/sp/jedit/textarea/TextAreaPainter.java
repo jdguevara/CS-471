@@ -59,6 +59,8 @@ import org.gjt.sp.util.Log;
  */
 public class TextAreaPainter extends JComponent implements TabExpander
 {
+	// Layer Counter
+	public int lineCount = 0;
 	//{{{ Layers
 	/**
 	 * The lowest possible layer.
@@ -1133,6 +1135,7 @@ public class TextAreaPainter extends JComponent implements TabExpander
 			boolean paintLineHighlight = shouldPaintLineHighlight(
 				caret,start,end);
 
+			// Line background painting / notebook line painting
 			Color bgColor;
 			if(paintLineHighlight)
 				bgColor = lineHighlightColor;
@@ -1142,13 +1145,19 @@ public class TextAreaPainter extends JComponent implements TabExpander
 				if(bgColor == null)
 					bgColor = getBackground();
 			}
-			else
+			else {
 				bgColor = getBackground();
+				gfx.setColor(Color.blue);
+				gfx.drawLine(0, y, getWidth(), y);
+			}
 
 			if(paintLineHighlight || collapsedFold)
 			{
 				gfx.setColor(bgColor);
 				gfx.fillRect(0,y,getWidth(),getLineHeight());
+				gfx.setColor(Color.blue);
+                gfx.drawLine(0, y, getWidth(), y);
+				gfx.drawLine(0, y+15, getWidth(), y+15);
 			} //}}}
 
 			//{{{ Paint token backgrounds
