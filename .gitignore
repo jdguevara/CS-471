@@ -9,6 +9,7 @@ jedit5.4.0source.tar.bz2
 # General File Types
 *.pdf
 *.mov
+*.png
 
 # Projects
 git-time-lapse-view
