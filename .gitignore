@@ -1,5 +1,8 @@
 ## Files/Directories to ignore
 
+# MacOS
+.DS_Store
+
 # Programs
 mucommander/
 
