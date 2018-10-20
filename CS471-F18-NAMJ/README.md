@@ -2,7 +2,7 @@
 
 ## Sponsor Name: Git Time Lapse View
 
-## Project Description: 
+## Project Description:
 
 Git Time-Lapse View is a cross-platform viewer that downloads all revisions of a file and lets you scroll through them by dragging a slider. As you scroll, you are shown a visual diff of the current revision and the previous revision. Thus you can see how a file evolved, and you can easily find the revision at which lines appeared, disappeared, or changed.
 
@@ -21,7 +21,7 @@ Regner          | Nathan          | nathanregner         | Developer
 
 Sprint | Estimated Velocity | Actual Velocity
 ------ | ------------------ | ---------------
-1      | TBD                | TBD
+1      | 18                 | TBD
 2      | TBD                | TBD
 3      | TBD                | TBD
 4      | TBD                | TBD
