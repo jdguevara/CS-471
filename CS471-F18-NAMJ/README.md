@@ -1,3 +1,5 @@
+[![Build Status](https://semaphoreci.com/api/v1/projects/95ae1fde-176b-44dd-b45a-58af0894c5df/2290425/shields_badge.svg)](https://semaphoreci.com/boisestate/cs471-f18-namj)
+
 ## Team Name: NAMJ
 
 ## Sponsor Name: Git Time Lapse View
@@ -12,16 +14,16 @@ Time-Lapse View is a powerful visual alternative to the Git "blame" command. It 
 
 Last Name       | First Name      | GitHub User Name     | Scrum Role
 --------------- | --------------- | -------------------- | ---------------
-Green           | Mayson          | m-oot                | Scrum Master
-Guevara         | Jaime           | jdguevara            | Developer 
-Hunter          | Austin          | AustinWalkerHunter   | Product Owner
-Regner          | Nathan          | nathanregner         | Developer
+Green           | Mayson          | m-oot                | Developer
+Guevara         | Jaime           | jdguevara            | Developer, Scrum Master 
+Hunter          | Austin          | AustinWalkerHunter   | Developer
+Regner          | Nathan          | nathanregner         | Developer, Product Owner
 
 ## Team Velocity:
 
 Sprint | Estimated Velocity | Actual Velocity
 ------ | ------------------ | ---------------
-1      | 18                 | TBD
+1      | 18                 | 11
 2      | TBD                | TBD
 3      | TBD                | TBD
 4      | TBD                | TBD
