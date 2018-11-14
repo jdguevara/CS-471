@@ -1,0 +1,26 @@
+title User Iterates Once
+
+actor User
+participant View
+participant Vizualizer
+participant Controller
+participant Model
+participant "//SortingAlgorithm//" as SortingAlgorithm
+participant "Concrete Sorting Algorithm\n(e.g. Bubble Sort)" as BubbleSort
+
+
+User->View:Click Iterate Button
+View->Controller:actionPerformed(UserCommand.ITERATE)
+Controller->Model:iterateSort()
+Model->SortingAlgorithm:iterateSort()
+note over SortingAlgorithm:Update iteration count
+SortingAlgorithm->BubbleSort:doSortIteration()
+SortingAlgorithm<<--BubbleSort:return isSorted
+SortingAlgorithm->SortingAlgorithm:setIsSorted()
+Controller<-SortingAlgorithm:onDataChanged()
+View<-Controller:onSortDataUpdated()
+View->Vizualizer:updateData()
+View->Model:getIterationCount()
+note over View:Update iteration count label
+User<--View:Redraws Screen
+

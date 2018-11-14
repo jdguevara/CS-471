@@ -1,0 +1,76 @@
+title User Initiates Sorting Animation
+
+actor User
+participant View
+participant Vizualizer
+participant Controller
+participant Model
+participant "//SortingAlgorithm//" as SortingAlgorithm
+participant "Concrete Sorting Algorithm\n(e.g. Bubble Sort)" as BubbleSort
+participant Timer
+
+
+User->View:Click Play Button
+View->Controller:actionPerformed(UserCommand.PLAY)
+Controller->Model:startAnimation()
+Model->SortingAlgorithm:startAnimation()
+SortingAlgorithm->*Timer:new Timer()
+
+note over SortingAlgorithm:Initialize variabqles for measuring\ntime elapsed during animation.
+
+SortingAlgorithm->Timer:start()
+Controller<-SortingAlgorithm:onButtonStateChange()
+View<-Controller:onButtonsChanged()
+View->Model:Checks which buttons are enabled
+note over View:Enables or disables each button
+View-->User: Redraws Screen
+==Sorting Started==
+else Sorted
+loop Until SortingAlgorithm.isSorted()
+Timer->Timer: actionPerformed()
+Timer->SortingAlgorithm: iterateSort()
+
+note over SortingAlgorithm:Update iteration count
+SortingAlgorithm->BubbleSort:doSortIteration()
+SortingAlgorithm<<--BubbleSort:return isSorted
+opt If Sorted
+SortingAlgorithm->SortingAlgorithm:setIsSorted()
+Controller<-SortingAlgorithm:onSortStatusChanged()
+View<-Controller:onButtonsChanged()
+View->Model:Checks which buttons are enabled
+note over View:Enables or disables each button
+View-->User: Redraws Screen
+View<-Controller:onDynamicTextChanged()
+expandable− Get information used for labels
+View->Model:getAllAlgorithmNames()
+loop For each algorithm
+Model->SortingAlgorithm:getName(language)
+end
+View->Model:getIterationCount()
+View->Model:getSortedMessage()
+Model->SortingAlgorithm:getSortedMessage(language)
+end
+note over View:Update labels and iteration count
+View-->User: Redraws Screen
+end
+Controller<-SortingAlgorithm:onDataChanged()
+View<-Controller:onSortDataUpdated()
+View->Vizualizer:updateData()
+View->Model:getIterationCount()
+note over View:Update iteration count label
+User<--View:Redraws Screen
+SortingAlgorithm-->>Timer:iterateSort() Complete
+SortingAlgorithm<-Timer:isSorted()
+end
+
+==Sorting Complete==
+note over Timer:Save time elapsed for animation.
+Timer->Timer:stop()
+SortingAlgorithm<-Timer:signalButtonStateChanged()
+
+Controller<-SortingAlgorithm:onButtonStateChange()
+destroy Timer
+View<-Controller:onButtonsChanged()
+View->Model:Checks which buttons are enabled
+View-->User: Redraws Screen
+

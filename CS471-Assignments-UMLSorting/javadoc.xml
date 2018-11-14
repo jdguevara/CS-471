@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc">
+    <target name="javadoc">
+        <javadoc access="package" author="false" destdir="doc/javadoc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="edu.boisestate.cs471.view,edu.boisestate.cs471.controller,edu.boisestate.cs471.model,edu.boisestate.cs471,edu.boisestate.cs471.util" source="1.8" sourcepath="src" splitindex="true" use="true" version="true"/>
+    </target>
+</project>
