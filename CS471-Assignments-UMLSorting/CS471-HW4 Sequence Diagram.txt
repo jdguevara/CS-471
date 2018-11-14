@@ -1,0 +1,66 @@
+participant User
+participant "(anonymous/lambda) ItemListener\n (file: View.java, method: addMenuListeners, line: 252)" as anonymous_ItemListener
+participant View
+participant Controller
+participant Model
+participant SortingAlgorithm
+participant JFrame
+
+
+note over User:User chooses the menu option:\nSettings -> Language -> "newLanguage"
+
+User->anonymous_ItemListener:itemStateChanged(ItemEvent)
+
+anonymous_ItemListener->Controller:updateLanguage(newLanguage)
+
+Controller->Model:<color #red>updateLanguage("Spanish")</color>
+
+View<-Controller:onLocalizationChanged(newLanguage)
+
+View->View:setDynamicText()
+
+note over View: The "expandable" frame below is a "workaround" \nfor illustrating that everything in that frame occurs\n inside the "View.setDynamicText()" method
+
+expandable− inside View.setDynamicText() method
+
+View->Controller:getModel()
+
+View->Model:<color #red>getAllAlgorithmNames()
+loop For each algorithm</color>
+
+Model->SortingAlgorithm:getName(newLanguage)
+
+end
+
+Model-->View:
+
+View->Model:getSelectedIndex()
+
+View->Model:getIterationCount()
+
+Model->Model:<color #red>getSelectedAlgorithm()</color>
+
+Model->SortingAlgorithm:<color #red>getIterationCount()</color>
+
+SortingAlgorithm-->Model:
+
+Model-->View:
+
+View->Model:getSortedMessage()
+
+Model->Model:getSelectedAlgorithm()
+
+Model->SortingAlgorithm:<color #red>getSortedMessage(mLanguage)</color>
+
+SortingAlgorithm-->Model:
+
+Model-->View:
+
+
+View->JFrame:repaint()
+
+end
+
+View->View:setMenuText(newLanguage)
+
+View->View:setStaticLabels(newLanguage)
