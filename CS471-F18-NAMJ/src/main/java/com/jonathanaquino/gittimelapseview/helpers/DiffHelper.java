@@ -1,20 +1,33 @@
 package com.jonathanaquino.gittimelapseview.helpers;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-
-import org.apache.commons.lang.StringEscapeUtils;
-import org.apache.commons.lang.StringUtils;
-import org.incava.util.diff.Difference;
-
+import com.google.common.collect.ImmutableMap;
 import com.jonathanaquino.gittimelapseview.Diff;
+import difflib.DiffException;
+import difflib.DiffRow;
+import difflib.DiffRowGenerator;
+import difflib.myers.MyersDiff;
+import org.apache.commons.lang.StringUtils;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * Utility functions for diffing files.
  */
 public class DiffHelper {
+
+    private static final String TAG = "span";
+
+    private static final Map<DiffRow.Tag, String> TAG_CLASS = ImmutableMap.<DiffRow.Tag, String>builder()
+            .put(DiffRow.Tag.INSERT, "add")
+            .put(DiffRow.Tag.DELETE, "remove")
+            .put(DiffRow.Tag.CHANGE, "change")
+            .build();
 
     /**
      * Returns a diff of two text files
@@ -22,186 +35,97 @@ public class DiffHelper {
      * @param leftFileContents  the contents of the first file
      * @param rightFileContents  the contents of the second file
      * @param showDifferencesOnly  whether to hide identical lines
+     * @param wordDiff
      * @return  the lines that differ
      */
-    public static Diff diff(String leftFileContents, String rightFileContents, boolean showDifferencesOnly) {
+    public static Diff diff(String leftFileContents, String rightFileContents, boolean showDifferencesOnly, boolean wordDiff) throws DiffException {
         String[] leftFileLines = split(leftFileContents);
         String[] rightFileLines = split(rightFileContents);
         List leftLineNumbers = lineNumbers(leftFileLines);
         List rightLineNumbers = lineNumbers(rightFileLines);
-        List differences = new org.incava.util.diff.Diff(leftFileLines, rightFileLines).diff();
-        Collections.reverse(differences);
-        for (Iterator i = differences.iterator(); i.hasNext(); ) {
-            Difference difference = (Difference) i.next();
-            int leftStart = difference.getDeletedStart();
-            int leftEnd = difference.getDeletedEnd() == Difference.NONE ? leftStart : difference.getDeletedEnd() + 1;
-            int rightStart = difference.getAddedStart();
-            int rightEnd = difference.getAddedEnd() == Difference.NONE ? rightStart : difference.getAddedEnd() + 1;
-            int leftExtraLineCount = (leftEnd-leftStart) - (rightEnd-rightStart);
-            if (leftExtraLineCount > 0) { rightLineNumbers.subList(rightEnd, rightEnd).addAll(Collections.nCopies(leftExtraLineCount, "")); }
-            int rightExtraLineCount = (rightEnd-rightStart) - (leftEnd-leftStart);
-            if (rightExtraLineCount > 0) { leftLineNumbers.subList(leftEnd, leftEnd).addAll(Collections.nCopies(rightExtraLineCount, "")); }
-        }
-        if (leftLineNumbers.size() != rightLineNumbers.size()) { throw new RuntimeException("Assertion failed: " + leftLineNumbers.size() + " != " + rightLineNumbers.size()); }
-        List leftFormattedText = new ArrayList();
-        List rightFormattedText = new ArrayList();
-        List leftHtml = new ArrayList();
-        List rightHtml = new ArrayList();
-        List leftLines = new ArrayList();
-        List rightLines = new ArrayList();
-        int lineNumberWidth = String.valueOf(leftLineNumbers.size()).length() + 1;
-        for (int i = 0; i < leftLineNumbers.size(); i++) {
-            String leftLineNumber = leftLineNumbers.get(i).toString();
-            String rightLineNumber = rightLineNumbers.get(i).toString();
-            leftLines.add(leftLineNumber.length() == 0 ? "" : leftFileLines[Integer.parseInt(leftLineNumber)-1]);
-            rightLines.add(rightLineNumber.length() == 0 ? "" : rightFileLines[Integer.parseInt(rightLineNumber)-1]);
-        }
-        boolean[] differenceFlags = differenceFlags(leftLines, rightLines, leftLineNumbers, rightLineNumbers);
+
+        DiffRowGenerator generator = new DiffRowGenerator.Builder()
+                .showInlineDiffs(wordDiff)
+                .ignoreWhiteSpaces(true)
+                .diffAlgorithm(new MyersDiff<>())
+                .inlineRevisedInsertTag(TAG)
+                .inlineRevisedInsertCssClass(TAG_CLASS.get(DiffRow.Tag.INSERT))
+                .inlineOriginDeleteTag(TAG)
+                .inlineOriginDeleteTag(TAG_CLASS.get(DiffRow.Tag.DELETE))
+                .build();
+
+        //compute the differences for two test texts.
+        List<DiffRow> diff = generator.generateDiffRows(
+                Arrays.asList(leftFileLines),
+                Arrays.asList(rightFileLines));
+
+        List<DiffRowIndexed> rows = IntStream.range(0, diff.size())
+                .mapToObj(i -> new DiffRowIndexed(diff.get(i), i + 1))
+                .collect(Collectors.toList());
+
+        List<DiffRowIndexed> changedRows = rows.stream()
+                .filter(x -> x.getRow().getTag() != DiffRow.Tag.EQUAL)
+                .collect(Collectors.toList());
+
         if (showDifferencesOnly) {
-            keepDifferencesOnly(3, differenceFlags, leftLines, rightLines, leftLineNumbers, rightLineNumbers);
-            differenceFlags = differenceFlags(leftLines, rightLines, leftLineNumbers, rightLineNumbers);
+            rows = changedRows;
         }
-        for (int i = 0; i < leftLineNumbers.size(); i++) {
-            String leftLineNumber = leftLineNumbers.get(i).toString();
-            String rightLineNumber = rightLineNumbers.get(i).toString();
-            String leftLine = leftLines.get(i).toString();
-            String rightLine = rightLines.get(i).toString();
-            String[] textPair = text(leftLineNumber, rightLineNumber, leftLine, rightLine, lineNumberWidth);
-            String[] htmlPair = html(leftLineNumber, rightLineNumber, leftLine, rightLine, i, lineNumberWidth);
-            leftFormattedText.add(textPair[0]);
-            rightFormattedText.add(textPair[1]);
-            leftHtml.add(htmlPair[0]);
-            rightHtml.add(htmlPair[1]);
-        }        
-        return new Diff("<pre>" + StringUtils.join(leftHtml, "\n") + "</pre>", "<pre>" + StringUtils.join(rightHtml, "\n") + "</pre>", StringUtils.join(leftFormattedText, "\n"), StringUtils.join(rightFormattedText, "\n"), leftLineNumbers, rightLineNumbers, differencePositions(differenceFlags));
+
+        return new Diff(
+                "<pre>" + renderLines(rows, wordDiff, DiffRow::getOldLine) + "</pre>",
+                "<pre>" + renderLines(rows, wordDiff, DiffRow::getNewLine) + "</pre>",
+                leftFileContents,
+                rightFileContents,
+                leftLineNumbers,
+                rightLineNumbers,
+                changedRows.stream().map(DiffRowIndexed::getLineNum).collect(Collectors.toList()));
+    }
+
+    private static String formatLineDiff(DiffRow row, Function<DiffRow, String> getText) {
+        String text = getText.apply(row);
+        String cssClass = TAG_CLASS.get(row.getTag());
+
+        if (cssClass != null) {
+            return "<span class=\"" + cssClass + "\">" + text + "</span>";
+        } else {
+            return text;
+        }
     }
 
     /**
-     * Removes elements from the arrays other than differences and a few lines of context
-     * 
-     * @param context  number of lines to show before and after the difference
-     * @param differenceFlags  an array of flags indicating whether the corresponding lines are different
-     * @param leftLines  text for the left side of the diff
-     * @param rightLines  text for the right side of the diff
-     * @param leftLineNumbers  line number strings, or empty strings where lines are missing
-     * @param rightLineNumbers  line number strings, or empty strings where lines are missing
+     * Renders diff lines to an HTML document
      */
-    protected static void keepDifferencesOnly(int context, boolean[] differenceFlags, List leftLines, List rightLines, List leftLineNumbers, List rightLineNumbers) {
-        boolean[] differenceFlagsWithContext = new boolean[differenceFlags.length]; 
-        for (int i = 0; i < differenceFlags.length; i++) {
-            if (! differenceFlags[i]) { continue; }
-            differenceFlagsWithContext[i] = true;
-            for (int j = 0; j <= context; j++) {
-                if (i - j >= 0) { differenceFlagsWithContext[i-j] = true; }
-                if (i + j < differenceFlags.length) { differenceFlagsWithContext[i+j] = true; }
-            }
-        }
-        List newLeftLines = new ArrayList();
-        List newRightLines = new ArrayList();
-        List newLeftLineNumbers = new ArrayList();
-        List newRightLineNumbers = new ArrayList();
-        for (int i = 0; i < differenceFlagsWithContext.length; i++) {
-            if (differenceFlagsWithContext[i]) {
-                newLeftLines.add(leftLines.get(i));
-                newRightLines.add(rightLines.get(i));
-                newLeftLineNumbers.add(leftLineNumbers.get(i));
-                newRightLineNumbers.add(rightLineNumbers.get(i));
-            } else if (i > 0 && differenceFlagsWithContext[i-1]) {
-                for (int j = 0; j < 3; j++) {
-                    newLeftLines.add("");
-                    newRightLines.add("");
-                    newLeftLineNumbers.add("");
-                    newRightLineNumbers.add("");
-                }
-            }
-        }
-        leftLines.clear();
-        leftLines.addAll(newLeftLines);
-        rightLines.clear();
-        rightLines.addAll(newRightLines);
-        leftLineNumbers.clear();
-        leftLineNumbers.addAll(newLeftLineNumbers);
-        rightLineNumbers.clear();
-        rightLineNumbers.addAll(newRightLineNumbers);
+    private static String renderLines(List<DiffRowIndexed> rows, boolean wordDiff, Function<DiffRow, String> formatRow) {
+        int lineNumberWidth = rows.isEmpty()
+                ? 0
+                : rows.get(rows.size() - 1).lineNum % 10 + 2;
+
+        Function<DiffRow, String> formatter = wordDiff ?
+                formatRow
+                : x -> formatLineDiff(x, formatRow);
+
+        return rows.stream()
+                .map(r -> StringUtils.rightPad(String.valueOf(r.getLineNum()), lineNumberWidth) +
+                        formatter.apply(r.getRow()))
+                .collect(Collectors.joining("\n"));
     }
 
-    /**
-     * Returns the zero-based line numbers at which differences start.
-     * 
-     * @param differenceFlags  an array of flags indicating whether the corresponding lines are different
-     * @return  0 for the first line, 1 for the 2nd, etc.
-     */
-    private static List differencePositions(boolean[] differenceFlags) {
-        List differencePositions = new ArrayList();
-        for (int i = 0; i < differenceFlags.length; i++) {
-            if (i == 0 && differenceFlags[i]) { differencePositions.add(new Integer(i)); }
-            if (i > 0 && differenceFlags[i] && !differenceFlags[i-1]) { differencePositions.add(new Integer(i)); }
-        }
-        return differencePositions;
-    }
+    private static class DiffRowIndexed {
+        private final DiffRow row;
+        private final int lineNum;
 
-    /**
-     * Returns an array of flags indicating whether the corresponding lines are different.
-     *
-     * @param leftLines  text for the left side of the diff
-     * @param rightLines  text for the right side of the diff
-     * @param leftLineNumbers  line number strings, or empty strings where lines are missing
-     * @param rightLineNumbers  line number strings, or empty strings where lines are missing
-     * @return  whether pairs of lines are different
-     */
-    private static boolean[] differenceFlags(List leftLines, List rightLines, List leftLineNumbers, List rightLineNumbers) {
-        boolean[] differenceFlags = new boolean[leftLines.size()];
-        for (int i = 0; i < leftLines.size(); i++) {
-            differenceFlags[i] = !leftLines.get(i).equals(rightLines.get(i)) || (leftLineNumbers.get(i).toString().length() > 0 != rightLineNumbers.get(i).toString().length() > 0); 
+        public DiffRowIndexed(DiffRow row, int lineNum) {
+            this.row = row;
+            this.lineNum = lineNum;
         }
-        return differenceFlags;
-    }    
-    
-    /**
-     * Returns formatted text for the two lines
-     *
-     * @param leftLineNumber  line number for the left line, or an empty string if it does not exist
-     * @param rightLineNumber line number for the right line, or an empty string if it does not exist
-     * @param leftLine  the left line
-     * @param rightLine  the right line
-     * @param lineNumberWidth  the number of characters to pad the line numbers up to
-     * @return  two strings
-     */
-    private static String[] text(String leftLineNumber, String rightLineNumber, String leftLine, String rightLine, int lineNumberWidth) {
-        return new String[] {
-                StringUtils.rightPad(leftLineNumber, lineNumberWidth) + leftLine, 
-                StringUtils.rightPad(rightLineNumber, lineNumberWidth) + rightLine};
-    }
 
-    /**
-     * Returns HTML for the two lines
-     *
-     * @param leftLineNumber  line number for the left line, or an empty string if it does not exist
-     * @param rightLineNumber line number for the right line, or an empty string if it does not exist
-     * @param leftLine  the left line
-     * @param rightLine  the right line
-     * @param position  the zero-based vertical position of the two lines
-     * @param lineNumberWidth  the number of characters to pad the line numbers up to
-     * @return  two HTML strings
-     */
-    private static String[] html(String leftLineNumber, String rightLineNumber, String leftLine, String rightLine, int position, int lineNumberWidth) {
-        String leftOpeningTag = "", leftClosingTag = "", rightOpeningTag = "", rightClosingTag = "";
-        if (leftLineNumber.length() == 0 && rightLineNumber.length() == 0) {
-            
-        } else if (leftLineNumber.length() == 0) {
-            rightOpeningTag = "<span style='background-color: #A6CAF0'>";
-            rightClosingTag = "</span>";
-        } else if (rightLineNumber.length() == 0) {
-            leftOpeningTag = "<span style='background-color: #A6CAF0'>";
-            leftClosingTag = "</span>";
-        } else if (! leftLine.equals(rightLine)) {
-            leftOpeningTag = rightOpeningTag = "<span style='background-color: #A6CAF0'>";
-            leftClosingTag = rightClosingTag = "</span>";
+        public DiffRow getRow() {
+            return row;
         }
-        // Make sure the anchor tag is not empty; otherwise the Highlight offsets seem to get messed up [Jon Aquino 2007-10-16]
-        return new String[] { 
-                leftOpeningTag + "<a name='Position" + position + "'>" + StringUtils.rightPad(leftLineNumber, lineNumberWidth) + "</a>" + StringEscapeUtils.escapeHtml(leftLine) + leftClosingTag, 
-                rightOpeningTag + "<a name='Position" + position + "'>" + StringUtils.rightPad(rightLineNumber, lineNumberWidth) + "</a>" + StringEscapeUtils.escapeHtml(rightLine) + rightClosingTag };
+
+        public int getLineNum() {
+            return lineNum;
+        }
     }
 
     /**

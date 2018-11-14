@@ -1,25 +1,14 @@
 package com.jonathanaquino.gittimelapseview;
 
-import java.awt.CardLayout;
-import java.awt.Component;
-import java.awt.FlowLayout;
-import java.awt.Insets;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JFileChooser;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JProgressBar;
-import javax.swing.JTextField;
-import javax.swing.Timer;
+import javax.swing.*;
 
 import com.jonathanaquino.gittimelapseview.helpers.GuiHelper;
 import com.jonathanaquino.gittimelapseview.helpers.MiscHelper;
-import com.jonathanaquino.gittimelapseview.helpers.Rot13;
 
 /**
  * A panel that prompts the user to enter a file path.
@@ -56,6 +45,12 @@ public class LoadPanel extends JPanel {
     /** The dialog for browsing a filesystem. */
     private JFileChooser fileChooser = null;
 
+    /** The Checkbox for our Dark Theme. */
+    private JCheckBox darkThemeCheckBox = new JCheckBox("Dark Theme");
+
+    /** Toggle for showing word or line diffs */
+    private JCheckBox wordDiff = new JCheckBox("Diff words");
+
     /**
      * Creates a new LoadPanel.
      *
@@ -68,6 +63,7 @@ public class LoadPanel extends JPanel {
         createProgressPanel();
         add(fieldPanel, "field-panel");
         add(progressPanel, "progress-panel");
+        wordDiff.setSelected(applicationWindow.getApplication().getConfiguration().getBoolean("wordDiff", false));
     }
 
     /**
@@ -113,12 +109,46 @@ public class LoadPanel extends JPanel {
             }
         });
         fieldPanel.add(loadButton);       
-        fieldPanel.add(versionLabel);        
+        fieldPanel.add(versionLabel);
+        fieldPanel.add(createDarkThemeCheckBox());
+        if (configuration.getBoolean("DarkTheme", darkThemeCheckBox.isSelected())) {
+            fieldPanel.setBackground(Color.DARK_GRAY);
+            versionLabel.setForeground(Color.LIGHT_GRAY);
+            limitLabel.setForeground(Color.LIGHT_GRAY);
+            filePathLabel.setForeground(Color.LIGHT_GRAY);
+        }
+        wordDiff.addActionListener(event -> {
+            MiscHelper.handleExceptions(() -> {
+                applicationWindow.getApplication().getConfiguration().setBoolean("wordDiff", wordDiff.isSelected());
+                applicationWindow.loadRevision();
+            });
+        });
+        fieldPanel.add(wordDiff);
         read(configuration);
+    }
+
+    private Component createDarkThemeCheckBox() {
+        Configuration config = applicationWindow.getApplication().getConfiguration();
+        if (config.getBoolean("DarkTheme", darkThemeCheckBox.isSelected())) {
+            darkThemeCheckBox.setForeground(Color.LIGHT_GRAY);
+        }
+        darkThemeCheckBox.setSelected(config.getBoolean("DarkTheme", false));
+        darkThemeCheckBox.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                MiscHelper.handleExceptions(new Closure() {
+                    public void execute() throws Exception {
+                        config.setBoolean("DarkTheme", darkThemeCheckBox.isSelected());
+                    }
+                });
+            }
+        });
+        return darkThemeCheckBox;
     }
 
     private Component createBrowseButton() {
         JButton button = new JButton("...");
+        //button.setBackground(Color.DARK_GRAY);
+        //button.setForeground(Color.LIGHT_GRAY);
         button.setToolTipText("Browse directories");
         button.setMargin(new Insets(0, 2, 0, 2));
         button.addActionListener(new ActionListener() {
@@ -195,6 +225,13 @@ public class LoadPanel extends JPanel {
               fileChooser.setMultiSelectionEnabled(false);
         }
         return fileChooser;
+    }
+
+    /**
+     * @return true if the user wants to see word diffs, false if they want to see line diffs
+     */
+    public boolean isShowingWordDiffs() {
+        return wordDiff.isSelected();
     }
 
 }

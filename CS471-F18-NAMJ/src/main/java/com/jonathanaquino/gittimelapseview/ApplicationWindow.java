@@ -36,11 +36,12 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DefaultHighlighter;
+import javax.swing.text.html.HTMLEditorKit;
+import javax.swing.text.html.StyleSheet;
 
 import com.jonathanaquino.gittimelapseview.Searcher.Side;
 import com.jonathanaquino.gittimelapseview.helpers.GuiHelper;
 import com.jonathanaquino.gittimelapseview.helpers.MiscHelper;
-import com.jonathanaquino.gittimelapseview.helpers.Rot13;
 
 /**
  * The main window of the program.
@@ -120,6 +121,7 @@ public class ApplicationWindow extends JFrame {
      * Sets up the GUI components.
      */
     private void initialize() throws Exception {
+        final Configuration configuration = this.getApplication().getConfiguration();
         setTitle("Git Time-Lapse View");
         initializeWindowPosition();
         getContentPane().setLayout(new BorderLayout());
@@ -134,6 +136,11 @@ public class ApplicationWindow extends JFrame {
         initializeMetadataTextArea(leftMetadataTextArea, 0, metadataPanel);
         initializeMetadataTextArea(rightMetadataTextArea, 1, metadataPanel);
         JPanel innerPanel = new JPanel(new BorderLayout());
+        if (configuration.getBoolean("DarkTheme", true)) {
+            sliderPanel.setBackground(Color.DARK_GRAY);
+            innerPanel.setBackground(Color.DARK_GRAY);
+            setBackground(Color.DARK_GRAY);
+        }
         add(sliderPanel, BorderLayout.NORTH);
         add(innerPanel, BorderLayout.CENTER);
         loadPanel = new LoadPanel(this);
@@ -141,6 +148,9 @@ public class ApplicationWindow extends JFrame {
         innerPanel.add(editorPanePanel, BorderLayout.CENTER);
         innerPanel.add(metadataPanel, BorderLayout.SOUTH);
         searchPanel = new SearchPanel(this);
+        if (configuration.getBoolean("DarkTheme", true)) {
+            searchPanel.setBackground(Color.DARK_GRAY);
+        }
         add(searchPanel, BorderLayout.SOUTH);
     }
 
@@ -148,6 +158,7 @@ public class ApplicationWindow extends JFrame {
      * Sets up the slider that controls the current revision.
      */
     private void initializeSlider() {
+        final Configuration configuration = this.getApplication().getConfiguration();
         final Timer changeRevisionTimer = MiscHelper.createQuiescenceTimer(50, new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 MiscHelper.handleExceptions(new Closure() {
@@ -164,7 +175,11 @@ public class ApplicationWindow extends JFrame {
         });
         slider.setSnapToTicks(true);
         slider.setMinorTickSpacing(1);
-        sliderPanel.add(new JLabel("Revisions:"), new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 5, 0, 0), 0, 0));
+        JLabel RevisionLabel = new JLabel("Revisions:");
+        if (configuration.getBoolean("DarkTheme", true)) {
+            RevisionLabel.setForeground(Color.LIGHT_GRAY);
+        }
+        sliderPanel.add(RevisionLabel, new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 5, 0, 0), 0, 0));
         sliderPanel.add(slider, new GridBagConstraints(1, 0, 1, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL, new Insets(5, 5, 5, 5), 0, 0));
         JButton previousButton = GuiHelper.setShortcutKey(new JButton("\u25C4"), KeyEvent.VK_LEFT, InputEvent.ALT_MASK);
         JButton nextButton = GuiHelper.setShortcutKey(new JButton("\u25BA"), KeyEvent.VK_RIGHT, InputEvent.ALT_MASK);
@@ -203,9 +218,15 @@ public class ApplicationWindow extends JFrame {
      * @param parentPanel  the panel to which to add the editor pane
      */
     private void initializeEditorPane(JEditorPane editorPane, int x, JPanel parentPanel) {
+        final Configuration configuration = this.getApplication().getConfiguration();
         editorPane.setContentType("text/html");
         editorPane.setEditable(false);
+        // Setting the Editor's and Scroll's background color for Dark Theme test (need to implement with toggle)
         JScrollPane scrollPane = new JScrollPane(editorPane);
+        if (configuration.getBoolean("DarkTheme", true)) {
+            editorPane.setBackground(Color.DARK_GRAY);
+            scrollPane.setBackground(Color.decode("#777777")); // This color was set using Hex as LIGHT_GRAY was too light for my taste
+        }
         scrollPane.setMaximumSize(new Dimension(100, 5000));
         parentPanel.add(scrollPane);
         scrollPane.getHorizontalScrollBar().addAdjustmentListener(new AdjustmentListener() {
@@ -283,11 +304,16 @@ public class ApplicationWindow extends JFrame {
      * @param parentPanel  the panel to which to add the text area
      */
     private void initializeMetadataTextArea(JTextArea metadataTextArea, int x, JPanel parentPanel) {
+        final Configuration configuration = this.getApplication().getConfiguration();
         metadataTextArea.setEditable(false);
         metadataTextArea.setWrapStyleWord(true);
         metadataTextArea.setLineWrap(true);
         JScrollPane scrollPane = new JScrollPane(metadataTextArea);
         scrollPane.setPreferredSize(new Dimension(100, 100));
+        if (configuration.getBoolean("DarkTheme", true)) {
+            metadataTextArea.setBackground(Color.DARK_GRAY);
+            scrollPane.setBackground(Color.decode("#777777")); // This color was set using Hex as LIGHT_GRAY was too light for my taste
+        }
         parentPanel.add(scrollPane);
     }
 
@@ -380,7 +406,9 @@ public class ApplicationWindow extends JFrame {
     private void setCurrentRevisionIndex(int n) throws Exception {
         List revisions = application.getRevisions();
         if (n >= revisions.size()) { return; }
-        Diff diff = application.diff((Revision) revisions.get(n - 1), (Revision) revisions.get(n), searchPanel.isShowingDifferencesOnly());
+        Diff diff = application.diff((Revision) revisions.get(n - 1), (Revision) revisions.get(n),
+                searchPanel.isShowingDifferencesOnly(),
+                loadPanel.isShowingWordDiffs());
         updateEditorPane(leftEditorPane, diff.getLeftHtml());
         updateEditorPane(rightEditorPane, diff.getRightHtml());
         updateMetadataTextArea(leftMetadataTextArea, (Revision) revisions.get(n - 1));
@@ -393,10 +421,18 @@ public class ApplicationWindow extends JFrame {
     /**
      * Populates the editor pane with the contents of the revision.
      *
-     * @param editorPanel  the editor pane to update
+     * @param editorPane  the editor pane to update
      * @param html  the revision to display in the editor pane
      */
     private void updateEditorPane(final JEditorPane editorPane, String html) throws Exception {
+        HTMLEditorKit kit = new HTMLEditorKit();
+        editorPane.setEditorKit(kit);
+        // add some styles to the html
+        StyleSheet styleSheet = kit.getStyleSheet();
+        styleSheet.addRule("span.add {background-color: green;}");
+        styleSheet.addRule("span.remove {background-color: red;}");
+        styleSheet.addRule("span.change {background-color: #A6CAF0;}");
+
         editorPane.setText(html);
         freezeHorizontalScrollBarsDuring(new Closure() {
             public void execute() throws Exception {
@@ -416,11 +452,16 @@ public class ApplicationWindow extends JFrame {
      * @param revision  the revision to display
      */
     private void updateMetadataTextArea(JTextArea metadataTextArea, Revision revision) {
+        final Configuration configuration = this.getApplication().getConfiguration();
         metadataTextArea.setText(revision.getRevisionNumber() + " "
                 + "by " + revision.getAuthor() + ", "
                 + revision.getDate() + "\n"
                 + revision.getLogMessage().trim());
         metadataTextArea.setCaretPosition(0);
+        if (configuration.getBoolean("DarkTheme", true)) {
+            metadataTextArea.setForeground(Color.lightGray);
+        }
+
     }
 
     /**

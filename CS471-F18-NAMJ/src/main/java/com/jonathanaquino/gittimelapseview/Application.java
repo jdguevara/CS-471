@@ -1,5 +1,6 @@
 package com.jonathanaquino.gittimelapseview;
 
+import difflib.DiffException;
 import jargs.gnu.CmdLineParser;
 
 import java.io.File;
@@ -89,10 +90,10 @@ public class Application {
      * @param showDifferencesOnly  whether to hide identical lines
      * @return  a comparison of the lines in each revision
      */
-    public Diff diff(Revision a, Revision b, boolean showDifferencesOnly) {
-        String key = a.getRevisionNumber() + ", " + b.getRevisionNumber() + ", " + (showDifferencesOnly ? "differences only" : "all");
+    public Diff diff(Revision a, Revision b, boolean showDifferencesOnly, boolean wordDiff) throws DiffException {
+        String key = a.getRevisionNumber() + ", " + b.getRevisionNumber() + ", " + (showDifferencesOnly ? "differences only" : "all") + wordDiff;
         if (! diffCache.containsKey(key)) {
-            diffCache.put(key, DiffHelper.diff(a.getContents(), b.getContents(), showDifferencesOnly));
+            diffCache.put(key, DiffHelper.diff(a.getContents(), b.getContents(), showDifferencesOnly, wordDiff));
         }
         return (Diff) diffCache.get(key);
     }

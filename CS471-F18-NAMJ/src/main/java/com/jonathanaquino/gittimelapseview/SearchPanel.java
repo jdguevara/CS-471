@@ -1,8 +1,6 @@
 package com.jonathanaquino.gittimelapseview;
 
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
@@ -43,6 +41,7 @@ public class SearchPanel extends JPanel {
      * @param applicationWindow  the main window of the program
      */
     public SearchPanel(final ApplicationWindow applicationWindow) {
+        final Configuration configuration = applicationWindow.getApplication().getConfiguration();
         setLayout(new GridBagLayout());
         final JTextField searchTextField = new JTextField(20);
         JButton searchButton = new JButton("Search");
@@ -70,6 +69,10 @@ public class SearchPanel extends JPanel {
                 });
             }}
         );
+        if (configuration.getBoolean("DarkTheme", true)) {
+            showDifferencesOnlyCheckbox.setForeground(Color.LIGHT_GRAY);
+            setBackground(Color.DARK_GRAY);
+        }
         add(showDifferencesOnlyCheckbox, new GridBagConstraints(9, 0, 1, 1, 1.0, 0.0, GridBagConstraints.EAST, GridBagConstraints.NONE, new Insets(0, 0, 0, 20), 0, 0));
         add(differenceCountLabel, new GridBagConstraints(10, 0, 1, 1, 0.0, 0.0, GridBagConstraints.EAST, GridBagConstraints.NONE, new Insets(0, 0, 0, 4), 0, 0));
         JButton previousButton = GuiHelper.setShortcutKey(new JButton("\u25B2"), KeyEvent.VK_UP, InputEvent.ALT_MASK);

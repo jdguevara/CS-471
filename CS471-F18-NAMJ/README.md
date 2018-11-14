@@ -15,16 +15,16 @@ Time-Lapse View is a powerful visual alternative to the Git "blame" command. It 
 Last Name       | First Name      | GitHub User Name     | Scrum Role
 --------------- | --------------- | -------------------- | ---------------
 Green           | Mayson          | m-oot                | Developer
-Guevara         | Jaime           | jdguevara            | Developer, Scrum Master 
+Guevara         | Jaime           | jdguevara            | Scrum Master 
 Hunter          | Austin          | AustinWalkerHunter   | Developer
-Regner          | Nathan          | nathanregner         | Developer, Product Owner
+Regner          | Nathan          | nathanregner         | Product Owner
 
 ## Team Velocity:
 
 Sprint | Estimated Velocity | Actual Velocity
 ------ | ------------------ | ---------------
 1      | 18                 | 11
-2      | TBD                | TBD
+2      | 18                 | 18
 3      | TBD                | TBD
 4      | TBD                | TBD
 
