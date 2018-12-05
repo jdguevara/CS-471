@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: net.fortuna.ical4j.data.CalendarEqualsTest
+-------------------------------------------------------------------------------
+Tests run: 75, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.436 sec - in net.fortuna.ical4j.data.CalendarEqualsTest

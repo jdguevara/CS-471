@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: net.fortuna.ical4j.util.UidGeneratorTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.05 sec - in net.fortuna.ical4j.util.UidGeneratorTest

@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="net.fortuna.ical4j.model.DateTimeTest" time="0.038" tests="381" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="25.161-b12"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/jguevara/CS-471/ical4j"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/jguevara/CS-471/ical4j"/>
+    <property name="java.runtime.version" value="1.8.0_161-b12"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/z_/z8mxpdtn4rj7gd8h26d3r6d80000gn/T/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/usr/local/Cellar/maven/3.5.4/libexec/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/jguevara/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="maven.conf" value="/usr/local/Cellar/maven/3.5.4/libexec/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.14"/>
+    <property name="library.jansi.path" value="/usr/local/Cellar/maven/3.5.4/libexec/lib/jansi-native"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/jguevara"/>
+    <property name="user.timezone" value="America/Boise"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="jguevara"/>
+    <property name="java.class.path" value="/usr/local/Cellar/maven/3.5.4/libexec/boot/plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install org.pitest:pitest-maven:mutationCoverage"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_161"/>
+    <property name="java.ext.dirs" value="/Users/jguevara/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/usr/local/Cellar/maven/3.5.4/libexec"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="testToString [19700101T000000Z]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [19840417T031534]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000827T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20070101T080000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20050630T093000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20050630T093000Z]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [19390901T000000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000402T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000402T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000101T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000102T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000103T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000104T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000105T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000106T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000107T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000108T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000109T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000110T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000111T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000112T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000113T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000114T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000115T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000116T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000117T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000118T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000119T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000120T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000121T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000122T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000123T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000124T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000125T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000126T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000127T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000128T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000129T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000130T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000131T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000201T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000202T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000203T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000204T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000205T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000206T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000207T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000208T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000209T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000210T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000211T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000212T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000213T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000214T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000215T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000216T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000217T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000218T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000219T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000220T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000221T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000222T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000223T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000224T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000225T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000226T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000227T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000228T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000229T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000301T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000302T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000303T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000304T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000305T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000306T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000307T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000308T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000309T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000310T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000311T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000312T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000313T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000314T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000315T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000316T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000317T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000318T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000319T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000320T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000321T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000322T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000323T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000324T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000325T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000326T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000327T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000328T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000329T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000330T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000331T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000401T020000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000402T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000403T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000404T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000405T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000406T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000407T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000408T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000409T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000410T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000411T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000412T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000413T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000414T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000415T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000416T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000417T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000418T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000419T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000420T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000421T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000422T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000423T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000424T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000425T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000426T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000427T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000428T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000429T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000430T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000501T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000502T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000503T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000504T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000505T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000506T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000507T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000508T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000509T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000510T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000511T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000512T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000513T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000514T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000515T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000516T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000517T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000518T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000519T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000520T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000521T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000522T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000523T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000524T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000525T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000526T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000527T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000528T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000529T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000530T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000531T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000601T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000602T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000603T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000604T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000605T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000606T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000607T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000608T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000609T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000610T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000611T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000612T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000613T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000614T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000615T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000616T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000617T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000618T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000619T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000620T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000621T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000622T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000623T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000624T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000625T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000626T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000627T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000628T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000629T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000630T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000701T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000702T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000703T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000704T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000705T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000706T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000707T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000708T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000709T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000710T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000711T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000712T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000713T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000714T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000715T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000716T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000717T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000718T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000719T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000720T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000721T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000722T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000723T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000724T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000725T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000726T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000727T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000728T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000729T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000730T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000731T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000801T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000802T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000803T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000804T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000805T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000806T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000807T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000808T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000809T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000810T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000811T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000812T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000813T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000814T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000815T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000816T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000817T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000818T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000819T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000820T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000821T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000822T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000823T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000824T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000825T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000826T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000827T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000828T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000829T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000830T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000831T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000901T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000902T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000903T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000904T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000905T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000906T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000907T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000908T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000909T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000910T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000911T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000912T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000913T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000914T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000915T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000916T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000917T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000918T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20000919T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000920T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000921T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000922T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000923T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000924T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000925T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000926T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000927T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000928T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000929T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20000930T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001001T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001002T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001003T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001004T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001005T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001006T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001007T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001008T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001009T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001010T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20001011T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001012T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001013T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001014T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001015T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001016T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001017T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001018T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001019T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001020T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001021T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20001022T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001023T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001024T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001025T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001026T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001027T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001028T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001029T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001030T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001031T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001101T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001102T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001103T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20001104T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001105T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001106T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001107T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001108T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001109T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001110T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001111T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001112T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001113T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001114T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20001115T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001116T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001117T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001118T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001119T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001120T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001121T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20001122T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001123T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001124T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001125T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001126T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001127T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001128T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001129T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001130T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001201T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20001202T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001203T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001204T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001205T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001206T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001207T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001208T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001209T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001210T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001211T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001212T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20001213T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001214T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001215T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001216T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001217T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001218T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001219T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001220T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001221T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001222T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001223T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testToString [20001224T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001225T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001226T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001227T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001228T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001229T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20001230T010000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20071104T000000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testToString [20110326T090000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testDateTimeString" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.001"/>
+  <testcase name="testDateTimeEquals" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testDateTimeHashCode" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testUtc" classname="net.fortuna.ical4j.model.DateTimeTest" time="0"/>
+  <testcase name="testRelaxed [00011231T000000]" classname="net.fortuna.ical4j.model.DateTimeTest" time="0.002"/>
+</testsuite>

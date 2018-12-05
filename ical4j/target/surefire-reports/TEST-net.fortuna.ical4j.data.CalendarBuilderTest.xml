@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="net.fortuna.ical4j.data.CalendarBuilderTest" time="1.094" tests="94" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="25.161-b12"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/jguevara/CS-471/ical4j"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/jguevara/CS-471/ical4j"/>
+    <property name="java.runtime.version" value="1.8.0_161-b12"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/z_/z8mxpdtn4rj7gd8h26d3r6d80000gn/T/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/usr/local/Cellar/maven/3.5.4/libexec/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/jguevara/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="maven.conf" value="/usr/local/Cellar/maven/3.5.4/libexec/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.14"/>
+    <property name="library.jansi.path" value="/usr/local/Cellar/maven/3.5.4/libexec/lib/jansi-native"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/jguevara"/>
+    <property name="user.timezone" value="America/Boise"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="jguevara"/>
+    <property name="java.class.path" value="/usr/local/Cellar/maven/3.5.4/libexec/boot/plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install org.pitest:pitest-maven:mutationCoverage"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_161"/>
+    <property name="java.ext.dirs" value="/Users/jguevara/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/usr/local/Cellar/maven/3.5.4/libexec"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="testBuildValid [etc/samples/valid/mansour.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.001"/>
+  <testcase name="testBuildValid [etc/samples/valid/calconnect2.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.006"/>
+  <testcase name="testBuildValid [etc/samples/valid/calconnect3.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.003"/>
+  <testcase name="testBuildValid [etc/samples/valid/canada.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.005"/>
+  <testcase name="testBuildValid [etc/samples/valid/oracle-personal-notes-test-empty.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0"/>
+  <testcase name="testBuildValid [etc/samples/valid/OZMovies.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.036"/>
+  <testcase name="testBuildValid [etc/samples/valid/korganizer-lowercase.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0"/>
+  <testcase name="testBuildValid [etc/samples/valid/calconnect4.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.005"/>
+  <testcase name="testBuildValid [etc/samples/valid/custom_component.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.001"/>
+  <testcase name="testBuildValid [etc/samples/valid/sunbird_sample.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.026"/>
+  <testcase name="testBuildValid [etc/samples/valid/calconnect5.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.004"/>
+  <testcase name="testBuildValid [etc/samples/valid/calconnect7.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.004"/>
+  <testcase name="testBuildValid [etc/samples/valid/talios.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.001"/>
+  <testcase name="testBuildValid [etc/samples/valid/friday13.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.001"/>
+  <testcase name="testBuildValid [etc/samples/valid/tmeher.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.012"/>
+  <testcase name="testBuildValid [etc/samples/valid/calconnect6.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.005"/>
+  <testcase name="testBuildValid [etc/samples/valid/mathBirthdays.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.264"/>
+  <testcase name="testBuildValid [etc/samples/valid/6.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.011"/>
+  <testcase name="testBuildValid [etc/samples/valid/7.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0"/>
+  <testcase name="testBuildValid [etc/samples/valid/categories.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0"/>
+  <testcase name="testBuildValid [etc/samples/valid/EXDATE.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0"/>
+  <testcase name="testBuildValid [etc/samples/valid/korganizer.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0"/>
+  <testcase name="testBuildValid [etc/samples/valid/4.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0"/>
+  <testcase name="testBuildValid [etc/samples/valid/friday13-NOT.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0"/>
+  <testcase name="testBuildValid [etc/samples/valid/lotr-updated.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.01"/>
+  <testcase name="testBuildValid [etc/samples/valid/bears.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0"/>
+  <testcase name="testBuildValid [etc/samples/valid/3.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0"/>
+  <testcase name="testBuildValid [etc/samples/valid/SwedishHolidays2003-2006.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0"/>
+  <testcase name="testBuildValid [etc/samples/valid/derryn.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0"/>
+  <testcase name="testBuildValid [etc/samples/valid/Australian32Holidays.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.001"/>
+  <testcase name="testBuildValid [etc/samples/valid/Christian32Holidays.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.006"/>
+  <testcase name="testBuildValid [etc/samples/valid/lotr.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.011"/>
+  <testcase name="testBuildValid [etc/samples/valid/rfc5545-sec3.6.6.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0"/>
+  <testcase name="testBuildValid [etc/samples/valid/blalor.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.001"/>
+  <testcase name="testBuildValid [etc/samples/valid/evolution.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.004"/>
+  <testcase name="testBuildValid [etc/samples/valid/Session6.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.002"/>
+  <testcase name="testBuildValid [etc/samples/valid/multiple_calendars.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0"/>
+  <testcase name="testBuildValid [etc/samples/valid/Dryway.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.006"/>
+  <testcase name="testBuildValid [etc/samples/valid/Packers.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.009"/>
+  <testcase name="testBuildValid [etc/samples/valid/rfc5545-sec3.6.4.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.001"/>
+  <testcase name="testBuildValid [etc/samples/valid/rfc5545-sec3.6.5.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.006"/>
+  <testcase name="testBuildValid [etc/samples/valid/EstoniaHolidays.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.039"/>
+  <testcase name="testBuildValid [etc/samples/valid/1106817412.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.001"/>
+  <testcase name="testBuildValid [etc/samples/valid/php-flp.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.001"/>
+  <testcase name="testBuildValid [etc/samples/valid/rfc5545-sec3.4.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.001"/>
+  <testcase name="testBuildValid [etc/samples/valid/calconnect10.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0"/>
+  <testcase name="testBuildValid [etc/samples/valid/rfc5545-sec3.6.1.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.001"/>
+  <testcase name="testBuildValid [etc/samples/valid/oracle-personal-notes-test.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.001"/>
+  <testcase name="testBuildValid [etc/samples/valid/japan_west.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.013"/>
+  <testcase name="testBuildValid [etc/samples/valid/Belgische32feestdagen.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.003"/>
+  <testcase name="testBuildValid [etc/samples/valid/THFC.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.033"/>
+  <testcase name="testBuildValid [etc/samples/valid/rfc5545-sec3.6.2.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.002"/>
+  <testcase name="testBuildValid [etc/samples/valid/rfc5545-sec3.6.3.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0"/>
+  <testcase name="testBuildValid [etc/samples/valid/ArgentinaHolidays.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.004"/>
+  <testcase name="testBuildValid [etc/samples/valid/incoming.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.001"/>
+  <testcase name="testBuildValid [etc/samples/valid/calconnect.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.007"/>
+  <testcase name="testBuildValid [etc/samples/valid/Misc.History.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.067"/>
+  <testcase name="testBuildValid [etc/samples/valid/Standup.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.003"/>
+  <testcase name="testBuildValid [etc/samples/valid/miked.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.004"/>
+  <testcase name="testBuildValid [etc/samples/valid/New Years Day.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.005"/>
+  <testcase name="testBuildValid [etc/samples/valid/calconnect8.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.008"/>
+  <testcase name="testBuildValid [etc/samples/valid/rfc5545-sec4.4.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.001"/>
+  <testcase name="testBuildValid [etc/samples/valid/korganizer_sample.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.001"/>
+  <testcase name="testBuildValid [etc/samples/valid/afl2004.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.03"/>
+  <testcase name="testBuildValid [etc/samples/valid/rfc5545-sec4.5.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0"/>
+  <testcase name="testBuildValid [etc/samples/valid/calconnect9.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.01"/>
+  <testcase name="testBuildValid [etc/samples/valid/rfc5545-sec4.1.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.001"/>
+  <testcase name="testBuildValid [etc/samples/valid/BCP321928.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.06"/>
+  <testcase name="testBuildValid [etc/samples/valid/classify.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.001"/>
+  <testcase name="testBuildValid [etc/samples/valid/2207678.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.001"/>
+  <testcase name="testBuildValid [etc/samples/valid/Australian_TV_Melbourne.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.008"/>
+  <testcase name="testBuildValid [etc/samples/valid/rfc5545-sec4.2.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.001"/>
+  <testcase name="testBuildValid [etc/samples/valid/Earth32Seasons.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.009"/>
+  <testcase name="testBuildValid [etc/samples/valid/rfc5545-sec4.3.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.001"/>
+  <testcase name="testBuildValid [etc/samples/valid/Buddhist.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.002"/>
+  <testcase name="testBuildInvalid [etc/samples/invalid/overlaps.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.001"/>
+  <testcase name="testBuildInvalid [etc/samples/invalid/eli_test.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.272"/>
+  <testcase name="testBuildInvalid [etc/samples/invalid/13-MoonPhase.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.003"/>
+  <testcase name="testBuildInvalid [etc/samples/invalid/0.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.002"/>
+  <testcase name="testBuildInvalid [etc/samples/invalid/core.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.018"/>
+  <testcase name="testBuildInvalid [etc/samples/invalid/twinkle.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.003"/>
+  <testcase name="testBuildInvalid [etc/samples/invalid/CalendarDataFile.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.002"/>
+  <testcase name="testBuildInvalid [etc/samples/invalid/multiple_calendars.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.002"/>
+  <testcase name="testBuildInvalid [etc/samples/invalid/smallcluster.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.001"/>
+  <testcase name="testBuildInvalid [etc/samples/invalid/groupwise.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.001"/>
+  <testcase name="testBuildInvalid [etc/samples/invalid/calconnect.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.005"/>
+  <testcase name="testBuildInvalid [etc/samples/invalid/eli_courtwright.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.002"/>
+  <testcase name="testBuildInvalid [etc/samples/invalid/phpicalendar_sample.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.002"/>
+  <testcase name="testBuildInvalid [etc/samples/invalid/google_aus_holidays.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.002"/>
+  <testcase name="testBuildInvalid [etc/samples/invalid/twinkle_orig.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.003"/>
+  <testcase name="testBuildInvalid [etc/samples/invalid/schedule-unstable.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.003"/>
+  <testcase name="testBuildInvalid [etc/samples/invalid/zidestoreical4jbomb.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.002"/>
+  <testcase name="testBuildInvalid [etc/samples/invalid/lastfm.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.006"/>
+  <testcase name="testBuildInvalid [etc/samples/invalid/boeing.ics]" classname="net.fortuna.ical4j.data.CalendarBuilderTest" time="0.002"/>
+</testsuite>
